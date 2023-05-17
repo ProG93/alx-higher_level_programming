@@ -3,6 +3,7 @@
      new = a_dictionary.copy()
      list_keys = list(new.keys())
 
-    for key in list_keys:
-        new[key] *= 2
-    return new
+    for i in list_keys:
+        new[i] *= 2
+    
+    return (new)
