@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """Defines a square based on task 1"""
 
+
 class Square:
     """Instantiation will raise both TypeError and ValueError"""
     def __init__(self, size=0):
