@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """returns the current square Area"""
 
+
 class Square:
     """defines a square and raises both TypeError and ValueError if
     size is not int or < 0"""
