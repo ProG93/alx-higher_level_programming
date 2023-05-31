@@ -1,52 +1,86 @@
 #!/usr/bin/python3
-#6-square.py
-"""Define a class Square."""
+"""A module containing a square"""
 
 
 class Square:
-    """Represent a square."""
+    """A square class"""
 
     def __init__(self, size=0, position=(0, 0)):
-        """Initialize a new square.
+        """initializes square
         Args:
-            size (int): The size of new square.
-            position (int, int): The position of the new square.
+            size (int): size of the square
+            position (int, int): position of the argument
         """
+
         self.size = size
         self.position = position
 
     @property
     def size(self):
-        """Get the current set of square."""
-        return (self.__size)
+        """Gets value of size
+        Returns:
+            size (int)
+        """
+
+        return self.__size
 
     @size.setter
     def size(self, value):
-        if not isinstance(value, int):
+        """ Change the value of size
+        Args:
+            value (int): new value of size
+        """
+
+        if type(value) != int:
             raise TypeError("size must be an integer")
         elif value < 0:
             raise ValueError("size must be >= 0")
         self.__size = value
 
+    def area(self):
+        """ Calculates the area of a square
+        Returns:
+            area
+        """
+
+        return self.__size * self.__size
+
     @property
+    def position(self):
+        """gets the position"""
+
+        return self.__position
+
+    @position.setter
     def position(self, value):
-        if (not isinstance(value, tuple) or
-                len(value) != 2 or
-                not all(isinstance(num, int) for num in value) or
-                not all(num >= 0 for num in value)):
+        """change the value of poaition
+        Args:
+            value (int, int): the new position
+        """
+
+        if type(value) != tuple or len(value) != 2:
+            raise TypeError("position must be a tuple of 2 positive integers")
+        if type(value[0]) != int or type(value[1]) != int:
+            raise TypeError("position must be a tuple of 2 positive integers")
+        if value[0] < 0 or value[1] < 0:
             raise TypeError("position must be a tuple of 2 positive integers")
         self.__position = value
 
-        def area(self):
-            """Return the current area of the square."""
-            return (self.__size * self.__size)
+    def area(self):
+        a = self.__size * self.__size
+        return a
 
-        def my_print(self):
-            """Print the square with the # character."""
-            if self.__size == 0:
-                print("")
-                return
+    def my_print(self):
+        """Print a square"""
 
-            [print(" ") for i in range(0, self.___position[1])]
-            [print("#", end="") for k in  range(0, self.__size)]
+        if self.__size == 0:
             print("")
+        else:
+            for line in range(0, self.__position[1]):
+                print()
+            for i in range(0, self.__size):
+                for space in range(0, self.__position[0]):
+                    print(" ", end="")
+                for j in range(0, self.__size):
+                    print("#", end="")
+                print()
